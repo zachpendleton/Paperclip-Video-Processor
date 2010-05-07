@@ -1,0 +1,23 @@
+# = Video Conversion Processor
+# This is a video processor module for Paperclip (http://thoughtbot.com/projects/paperclip) that uses
+# FFMpeg to convert uploaded videos to the format specified in the processor options. 
+# 
+# Because video processing takes a long time, it's recommended that this processor not be used synchronously.
+# Instead, use it asynchronously by returning false in the applicable model for the before_post_process callback
+# and then use a queue or a daemon to process new videos. 
+#
+# ---
+#
+# This processor takes the following options:
+#   [audio_bitrate] Sets the audio bitrate for FFMpeg. Should be a string formatted like '64k'
+#
+#   [audio_codec] The codec to be used for audio. Defaults to 'aac'
+#
+#   [bitrate] Sets the video bitrate for FFMpeg. Should be a string formatted like '256k'
+#
+#   [format] The file extension to be outputted by the processor
+#
+#   [size] The size of the processed video. Should be a string formatted like '480x320'
+#
+#   [video_codec] The codec to be used for video. Defaults to 'libx264'
+
